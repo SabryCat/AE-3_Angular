@@ -1,0 +1,66 @@
+<div class="cuerpoApp">
+    <section>
+        <nav>
+            <h1>Noticias</h1>
+            <ul>
+                <li><h2>MINECRAFT</h2>
+                    <p>Un usuario consigue convertir Minecraft en un plataformas 2D al estilo Super Mario sin
+                        utilizar mods y este es el
+                        resultado que asombra a millones de jugadores</p>
+                </li>
+                <li><h2>INTERNET</h2>
+                    <p>
+                        Primeros detalles del “Internet 2.0”: imposible de hackear y con mucho margen de mejora
+                        gracias a una tecnología que
+                        apunta a ser revolucionaria
+                    </p>
+                </li>
+                <li><h2>3DJUEGOS PC</h2>
+                    <p>La GTX 1060 ya no reina en Steam como la tarjeta gráfica más usada, y el regicidio lo ejecuta
+                        su hermana mayor</p>
+                </li>
+            </ul>
+        </nav>
+
+
+        <div *ngIf="!usuarioLogado">
+            <article>
+                <h1>Listado de juegos destacados</h1>
+                <p>No se ha logueado todavía, Corre ve a loguearte</p>
+                <img src="/assets/img/500_500.jpeg" width="400" height="350">
+            </article>
+        </div>
+
+        <div *ngIf="usuarioLogado">
+            <p class="nombreUser">Hola! {{usuario}}</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Titulo</th>
+                        <th>Valoracion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 
+                        Recorremos la lista, y si pulsamos en alguna fila, ejecutaremos el metodo
+                        "seleccionar", pasandole el videojuego seleccionado
+                    -->
+                    <tr *ngFor="let v of listaVideojuegos" (click)="seleccionar(v)">
+                        <td>{{ v.id }}</td>
+                        <td>{{ v.titulo }}</td>
+                        <td>{{ v.valoracion }}</td>
+                    </tr>
+                    <tr *ngIf="listaVideojuegos.length==0">
+                        <td class="rojo" colspan="4">
+                            NO SE HAN ENCONTRADO VIDEOJUEGOS
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </section>
+
+</div>

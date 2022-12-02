@@ -1,0 +1,36 @@
+<div class="cuerpoApp">
+    <table>
+        <thead>
+            <tr>
+                <th  colspan="2">
+                    <p>Detalle del video juego seleccionado</p>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> Titulo:</td>
+                <td>{{titulo}}</td>
+            </tr>
+            <tr>
+                <td> Compañia:</td>
+                <td>{{company}}</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="centro"> <img src="{{imagen}}" width="300" height="250"> </td>
+            </tr>
+            <tr>
+                <td> Valoracion:</td>
+                <td>{{valoracion}}</td>
+            </tr>
+            <tr>
+                <td class="centro" colspan="2">
+                    <button (click)="volver()">Volver</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+</div>

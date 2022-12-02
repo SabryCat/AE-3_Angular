@@ -1,0 +1,14 @@
+<!-- Terminal -->
+<div class="cuerpoApp">
+    <div class="terminal" *ngIf="usuarioError">
+      <span class="rojo" > Datos incorrectos, no has podido acceder</span>
+      <pre></pre>
+    </div> 
+  <div class="terminal">
+    <pre>Usuario : <input id="usuario" [(ngModel)]="usuario" type="text" class="customInput" ></pre>
+    <span class="rojo" *ngIf="!usuarioObligatorioOculto">El usuario es obligatorio</span>
+    <pre>Password: <input id="clave" [(ngModel)]="clave" type="text" class="customInput"></pre>
+    <span class="rojo" *ngIf="!claveObligatorioOculto">La clave es obligatoria</span>
+    <pre><input (click)="loginUser()" value="Acceder" type="button" class="customSubmit"></pre>
+  </div>
+</div>
